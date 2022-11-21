@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "securityforfabric:block/turret_block_side",
+    "north": "securityforfabric:block/turret_block_side",
+    "south": "securityforfabric:block/turret_block_side",
+    "east": "securityforfabric:block/turret_block_side",
+    "west": "securityforfabric:block/turret_block_side",
+    "up": "securityforfabric:block/turret_block_top",
+    "down": "securityforfabric:block/turret_block_side"
+  }
+}

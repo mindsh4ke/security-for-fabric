@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BM"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:grass_block"
+    },
+    "M": {
+      "item": "securityforfabric:blast_mine"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:grass_mine",
+    "count": 1
+  }
+}

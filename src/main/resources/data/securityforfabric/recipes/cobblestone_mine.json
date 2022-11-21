@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BM"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:cobblestone"
+    },
+    "M": {
+      "item": "securityforfabric:blast_mine"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:cobblestone_mine",
+    "count": 1
+  }
+}

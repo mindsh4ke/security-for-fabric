@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "securityforfabric:block/mines/cobblestone_mine"
+    }
+  }
+}

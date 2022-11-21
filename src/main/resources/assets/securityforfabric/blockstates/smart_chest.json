@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model":  "securityforfabric:block/smart_chest"},
+    "facing=east": {"model":  "securityforfabric:block/smart_chest", "y": 90},
+    "facing=south": {"model":  "securityforfabric:block/smart_chest", "y": 180},
+    "facing=west": {"model":  "securityforfabric:block/smart_chest", "y": 270}
+  }
+}

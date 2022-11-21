@@ -1,0 +1,28 @@
+{
+  "block.securityforfabric.blast_mine": "Blast Mine",
+  "block.securityforfabric.grass_mine": "Grass Block with Blast Mine",
+  "block.securityforfabric.dirt_mine": "Dirt Block with Blast Mine",
+  "block.securityforfabric.cobblestone_mine": "Cobblestone Block with Blast Mine",
+  "block.securityforfabric.stone_mine": "Stone Block with Blast Mine",
+  "block.securityforfabric.fake_floor": "Fake Grass",
+  "block.securityforfabric.spikes": "Spikes",
+  "block.securityforfabric.smart_door": "Smart Door",
+  "block.securityforfabric.smart_chest": "Smart Chest",
+  "block.securityforfabric.turret_block": "Turret",
+
+  "entity.securityforfabric.turret": "Turret",
+
+  "item.securityforfabric.spikesitem": "Spikes",
+  "item.securityforfabric.cpu": "CPU",
+
+  "tooltip.securityforfabric.smart_door_0": "The player who placed the door can break it and open it.",
+  "tooltip.securityforfabric.smart_door_1": "Other players can't do it",
+  "tooltip.securityforfabric.shift_for_more_info": "Press SHIFT for more info",
+  "tooltip.securityforfabric.turret_0": "Attacks to all nearby mob enemies",
+
+
+  "message.securityforfabric.cannot_use": "You are not allowed to use this block",
+  "message.securityforfabric.cannot_break": "You are not allowed to break this block",
+
+  "title.securityforfabric.smart_chest": "%s's chest"
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "securityforfabric:block/blast_mine"
+    }
+  }
+}

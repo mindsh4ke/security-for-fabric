@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CS"
+  ],
+  "key": {
+    "S": {
+      "item": "securityforfabric:cpu"
+    },
+    "C": {
+      "item": "minecraft:iron_door"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:smart_door",
+    "count": 1
+  }
+}

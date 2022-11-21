@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S ",
+    "Ci"
+  ],
+  "key": {
+    "S": {
+      "item": "securityforfabric:cpu"
+    },
+    "C": {
+      "item": "minecraft:iron_door"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:smart_chest",
+    "count": 1
+  }
+}
