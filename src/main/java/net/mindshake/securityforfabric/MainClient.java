@@ -5,14 +5,12 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.mindshake.securityforfabric.client.renderer.block.SpikesBlockRenderer;
 import net.mindshake.securityforfabric.client.renderer.entity.TurretBulletEntityRenderer;
 import net.mindshake.securityforfabric.client.renderer.entity.TurretEntityRenderer;
 import net.mindshake.securityforfabric.item.client.SpikesBlockItemRenderer;
 import net.mindshake.securityforfabric.registry.*;
-import net.mindshake.securityforfabric.screen.TurretScreen;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
@@ -46,7 +44,6 @@ public class MainClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMART_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GRASS_MINE, RenderLayer.getCutout());
 
-        ScreenRegistry.register(ModScreenHandlers.TURRET_SCREEN_HANDLER, TurretScreen::new);
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x5C9854, ModBlocks.FAKE_FLOOR, ModBlocks.GRASS_MINE);
         ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> world.getColor(pos, BiomeColors.GRASS_COLOR)), ModBlocks.FAKE_FLOOR, ModBlocks.GRASS_MINE);

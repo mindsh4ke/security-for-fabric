@@ -13,7 +13,7 @@ import software.bernie.example.registry.RegistryUtils;
 
 public class ModItems {
     public static final Item SPIKES = registerItem("spikesitem",
-            new SpikesBlockItem(ModBlocks.SPIKES, new FabricItemSettings().group(ItemGroup.REDSTONE)));
+            new BlockItem(ModBlocks.SPIKES, new FabricItemSettings().group(ItemGroup.REDSTONE)));
 
     public static final Item CPU = registerItem("cpu",
             new Item(new FabricItemSettings().group(ItemGroup.REDSTONE)));

@@ -1,3 +1,6 @@
 {
-  "parent": "securityforfabric:block/spikes"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "securityforfabric:item/spikesitem"
+  }
 }
