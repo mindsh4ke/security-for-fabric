@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "top": "securityforfabric:block/smart_door_top",
+    "bottom": "securityforfabric:block/smart_door_bottom"
+  }
+}

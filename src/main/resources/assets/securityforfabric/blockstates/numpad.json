@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "locked=true": {
+      "model": "securityforfabric:block/numpad"
+    },
+    "locked=false": {
+      "model": "securityforfabric:block/numpad_powered"
+    }
+  }
+}

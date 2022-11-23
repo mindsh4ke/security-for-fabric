@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "securityforfabric:block/mines/grass_mine"
+    }
+  }
+}

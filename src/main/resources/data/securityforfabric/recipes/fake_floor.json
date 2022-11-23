@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " M ",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:dirt"
+    },
+    "M": {
+      "item": "minecraft:grass"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:fake_floor",
+    "count": 2
+  }
+}
