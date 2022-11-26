@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CSC",
+    "SiS",
+    "CSC"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:copper_ingot"
+    },
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "i": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:fan",
+    "count": 1
+  }
+}

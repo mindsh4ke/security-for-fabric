@@ -108,6 +108,7 @@ public class SmartChestBlock extends BlockWithEntity {
         if (Screen.hasShiftDown()) {
             tooltip.add(new TranslatableText("tooltip.securityforfabric.smart_door_0"));
             tooltip.add(new TranslatableText("tooltip.securityforfabric.smart_door_1"));
+            tooltip.add(new TranslatableText("tooltip.securityforfabric.sneak_to_break"));
         } else {
             tooltip.add(new TranslatableText("tooltip.securityforfabric.shift_for_more_info"));
         }

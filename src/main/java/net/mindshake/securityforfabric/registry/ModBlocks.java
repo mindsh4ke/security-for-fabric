@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.mindshake.securityforfabric.Main;
 import net.mindshake.securityforfabric.block.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -28,6 +29,12 @@ public class ModBlocks {
     public static Block STONE_MINE = registerBlock("stone_mine",
             new BlastMineBlock(FabricBlockSettings.of(Material.STONE).strength(0.1f).sounds(BlockSoundGroup.STONE), true), ItemGroup.REDSTONE);
 
+    public static Block CRAFTING_TABLE_MINE = registerBlock("crafting_table_mine",
+            new BlastMineBlock(FabricBlockSettings.of(Material.STONE).strength(0.1f).sounds(BlockSoundGroup.WOOD), true), ItemGroup.REDSTONE);
+
+    public static Block FURNACE_MINE = registerBlock("furnace_mine",
+            new OrientableBlastMineBlock(FabricBlockSettings.of(Material.STONE).strength(0.1f).sounds(BlockSoundGroup.STONE), true), ItemGroup.REDSTONE);
+
 
     public static Block FAKE_FLOOR = registerBlock("fake_floor",
             new FakeFloorBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(0.6f).nonOpaque().sounds(BlockSoundGroup.GRASS)), ItemGroup.REDSTONE);
@@ -36,12 +43,15 @@ public class ModBlocks {
             new SpikesBlock(FabricBlockSettings.of(Material.METAL).strength(1f).requiresTool().nonOpaque()), ItemGroup.REDSTONE);
 
     public static Block SMART_DOOR = registerBlock("smart_door",
-            new SmartDoorBlock(FabricBlockSettings.of(Material.METAL).strength(-1f).nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
+            new SmartDoorBlock(FabricBlockSettings.of(Material.METAL).strength(-1f).nonOpaque().sounds(BlockSoundGroup.METAL).resistance(3600000.0f)), ItemGroup.REDSTONE);
     public static Block SMART_CHEST = registerBlock("smart_chest",
-            new SmartChestBlock(FabricBlockSettings.of(Material.METAL).strength(-1f).nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
+            new SmartChestBlock(FabricBlockSettings.of(Material.METAL).strength(-1f).nonOpaque().sounds(BlockSoundGroup.METAL).resistance(3600000.0f)), ItemGroup.REDSTONE);
 
     public static Block TURRET_BLOCK = registerBlock("turret_block",
-            new TurretBlock(FabricBlockSettings.of(Material.METAL).strength(-1f).nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
+            new TurretBlock(FabricBlockSettings.of(Material.METAL).strength(-1f).nonOpaque().sounds(BlockSoundGroup.METAL).resistance(3600000.0f)), ItemGroup.REDSTONE);
+
+    public static Block FAN = registerBlock("fan",
+            new FanBlock(FabricBlockSettings.of(Material.METAL).strength(0.4f).nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);

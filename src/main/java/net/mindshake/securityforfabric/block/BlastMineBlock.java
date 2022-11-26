@@ -70,7 +70,7 @@ public class BlastMineBlock extends BlockWithEntity {
         return super.onUse(state, world, pos, player, hand, hit);
     }
 
-    public void explodeBasic(ServerWorld world, BlockPos pos) {
+    public static void explodeBasic(ServerWorld world, BlockPos pos) {
         if (!world.isClient) {
             Explosion.DestructionType destructionType = Explosion.DestructionType.BREAK;
             float f = 2f;

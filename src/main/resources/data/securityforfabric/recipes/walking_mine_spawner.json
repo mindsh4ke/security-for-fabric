@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "securityforfabric:blast_mine"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:walking_mine_spawner",
+    "count": 1
+  }
+}

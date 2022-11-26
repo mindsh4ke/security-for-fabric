@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BM"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:furnace"
+    },
+    "M": {
+      "item": "securityforfabric:blast_mine"
+    }
+  },
+  "result": {
+    "item": "securityforfabric:furnace_mine",
+    "count": 1
+  }
+}

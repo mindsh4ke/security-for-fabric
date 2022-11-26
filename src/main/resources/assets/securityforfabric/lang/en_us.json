@@ -4,21 +4,29 @@
   "block.securityforfabric.dirt_mine": "Dirt Block with Blast Mine",
   "block.securityforfabric.cobblestone_mine": "Cobblestone Block with Blast Mine",
   "block.securityforfabric.stone_mine": "Stone Block with Blast Mine",
+  "block.securityforfabric.crafting_table_mine": "Crafting Table with Blast Mine",
+  "block.securityforfabric.furnace_mine": "Furnace Block with Blast Mine",
   "block.securityforfabric.fake_floor": "Fake Grass",
   "block.securityforfabric.spikes": "Spikes",
   "block.securityforfabric.smart_door": "Smart Door",
   "block.securityforfabric.smart_chest": "Smart Chest",
   "block.securityforfabric.turret_block": "Turret",
+  "block.securityforfabric.fan": "Fan",
 
   "entity.securityforfabric.turret": "Turret",
 
   "item.securityforfabric.spikesitem": "Spikes",
   "item.securityforfabric.cpu": "CPU",
+  "item.securityforfabric.walking_mine_spawner": "Walking Mine",
 
   "tooltip.securityforfabric.smart_door_0": "The player who placed the door can break it and open it.",
   "tooltip.securityforfabric.smart_door_1": "Other players can't do it",
   "tooltip.securityforfabric.shift_for_more_info": "Press SHIFT for more info",
+  "tooltip.securityforfabric.sneak_to_break": "Sneak + RightClick to break",
   "tooltip.securityforfabric.turret_0": "Attacks to all nearby mob enemies",
+
+  "tooltip.securityforfabric.walking_mine_item_0": "Will move forward on the direction you place it.",
+  "tooltip.securityforfabric.walking_mine_item_1": "It explodes in 20 seconds on when it's attacked.",
 
 
   "message.securityforfabric.cannot_use": "You are not allowed to use this block",
