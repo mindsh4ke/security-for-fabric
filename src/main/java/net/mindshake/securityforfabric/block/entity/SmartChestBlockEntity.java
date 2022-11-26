@@ -4,7 +4,6 @@ import net.mindshake.securityforfabric.registry.ModBlockEntities;
 import net.mindshake.securityforfabric.util.ImplementedInventory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.*;
-import net.minecraft.client.gui.screen.ingame.CraftingScreen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;

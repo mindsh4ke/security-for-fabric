@@ -25,14 +25,16 @@ import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class TurretEntity extends HostileEntity implements IAnimatable, RangedAttackMob {
 
-    private AnimationFactory factory = new AnimationFactory(this);
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private BasicTurretAttackGoal<TurretEntity> turretAttackGoal =  new BasicTurretAttackGoal<TurretEntity>(this, 0, 10, 15.0f);
 
     private static final TrackedData<String> OWNER_UUID;
@@ -190,10 +192,10 @@ public class TurretEntity extends HostileEntity implements IAnimatable, RangedAt
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         AnimationController<?> controller = event.getController();
         if (isActive()) {
-            controller.setAnimation(new AnimationBuilder().addAnimation("animation.turret.start", false));
+            controller.setAnimation(new AnimationBuilder().addAnimation("animation.turret.start", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             return PlayState.CONTINUE;
         } else {
-            controller.setAnimation(new AnimationBuilder().addAnimation("animation.turret.stop", false).addAnimation("animation.turret.stopped", true));
+            controller.setAnimation(new AnimationBuilder().addAnimation("animation.turret.stop", ILoopType.EDefaultLoopTypes.PLAY_ONCE).addAnimation("animation.turret.stopped", ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
     }

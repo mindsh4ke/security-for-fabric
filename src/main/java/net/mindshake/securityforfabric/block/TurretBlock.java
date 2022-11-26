@@ -68,6 +68,7 @@ public class TurretBlock extends Block {
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         if (Screen.hasShiftDown()) {
             tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.turret_0")));
+            tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.sneak_to_break")));
         } else {
             tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.shift_for_more_info")));
         }

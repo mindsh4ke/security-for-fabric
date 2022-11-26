@@ -4,9 +4,9 @@
   "version": "${version}",
 
   "name": "Security For Fabric",
-  "description": "A mod which adds several stuff to protect your home.",
+  "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Mindsh4ke"
+    "Mindsh4ke!"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",

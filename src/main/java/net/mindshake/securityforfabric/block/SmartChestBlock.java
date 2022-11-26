@@ -1,7 +1,6 @@
 package net.mindshake.securityforfabric.block;
 
 import net.mindshake.securityforfabric.block.entity.SmartChestBlockEntity;
-import net.mindshake.securityforfabric.registry.ModBlockEntities;
 import net.mindshake.securityforfabric.registry.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -107,10 +106,11 @@ public class SmartChestBlock extends BlockWithEntity {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(MutableText.of(new TranslatableTextContent(("tooltip.securityforfabric.smart_door_0"))));
-            tooltip.add(MutableText.of(new TranslatableTextContent(("tooltip.securityforfabric.smart_door_1"))));
+            tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.smart_door_0")));
+            tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.smart_door_1")));
+            tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.sneak_to_break")));
         } else {
-            tooltip.add(MutableText.of(new TranslatableTextContent(("tooltip.securityforfabric.shift_for_more_info"))));
+            tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.shift_for_more_info")));
         }
         super.appendTooltip(stack, world, tooltip, options);
     }

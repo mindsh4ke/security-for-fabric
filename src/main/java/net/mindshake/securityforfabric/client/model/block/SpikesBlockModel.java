@@ -1,6 +1,7 @@
 package net.mindshake.securityforfabric.client.model.block;
 
 import net.mindshake.securityforfabric.Main;
+import net.mindshake.securityforfabric.block.entity.SmartChestBlockEntity;
 import net.mindshake.securityforfabric.block.entity.SpikesBlockEntity;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.model.AnimatedGeoModel;

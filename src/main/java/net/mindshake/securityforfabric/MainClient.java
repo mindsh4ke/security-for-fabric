@@ -5,17 +5,17 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.mindshake.securityforfabric.client.renderer.block.FanBlockRenderer;
 import net.mindshake.securityforfabric.client.renderer.block.SpikesBlockRenderer;
 import net.mindshake.securityforfabric.client.renderer.entity.TurretBulletEntityRenderer;
 import net.mindshake.securityforfabric.client.renderer.entity.TurretEntityRenderer;
-import net.mindshake.securityforfabric.item.client.SpikesBlockItemRenderer;
+import net.mindshake.securityforfabric.client.renderer.entity.WalkingMineRenderer;
 import net.mindshake.securityforfabric.registry.*;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
-import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
 
 public class MainClient implements ClientModInitializer {
 
@@ -28,11 +28,13 @@ public class MainClient implements ClientModInitializer {
         BlockEntityRendererRegistry.register(ModBlockEntities.SPIKES_BLOCKENTITY,
                 (BlockEntityRendererFactory.Context rendererDispatcherIn) -> new SpikesBlockRenderer());
 
+        BlockEntityRendererRegistry.register(ModBlockEntities.FAN_BLOCKENTITY,
+                (BlockEntityRendererFactory.Context rendererDispatcherIn) -> new FanBlockRenderer());
+
         EntityRendererRegistry.register(ModEntities.TURRET, TurretEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.TURET_BULLET, TurretBulletEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.WALKING_MINE, WalkingMineRenderer::new);
 
-
-        GeoItemRenderer.registerItemRenderer(ModItems.SPIKES, new SpikesBlockItemRenderer());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLAST_MINE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMART_DOOR, RenderLayer.getCutout());

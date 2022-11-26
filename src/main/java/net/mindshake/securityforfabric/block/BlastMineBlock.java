@@ -1,35 +1,24 @@
 package net.mindshake.securityforfabric.block;
 
 import net.mindshake.securityforfabric.block.entity.BlastMineBlockEntity;
-import net.mindshake.securityforfabric.block.entity.SpikesBlockEntity;
 import net.mindshake.securityforfabric.registry.ModBlockEntities;
-import net.mindshake.securityforfabric.registry.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.AreaEffectCloudEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.explosion.Explosion;
-import org.apache.logging.log4j.core.jmx.Server;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
@@ -70,7 +59,7 @@ public class BlastMineBlock extends BlockWithEntity {
         return super.onUse(state, world, pos, player, hand, hit);
     }
 
-    public void explodeBasic(ServerWorld world, BlockPos pos) {
+    public static void explodeBasic(ServerWorld world, BlockPos pos) {
         if (!world.isClient) {
             Explosion.DestructionType destructionType = Explosion.DestructionType.BREAK;
             float f = 2f;
@@ -90,7 +79,6 @@ public class BlastMineBlock extends BlockWithEntity {
             explodeBasic(world, pos);
             world.breakBlock(pos, false);
         }
-        super.scheduledTick(state, world, pos, random);
     }
 
     @Override

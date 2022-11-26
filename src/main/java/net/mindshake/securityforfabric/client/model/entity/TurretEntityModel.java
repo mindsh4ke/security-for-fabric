@@ -25,16 +25,15 @@ public class TurretEntityModel extends AnimatedGeoModel<TurretEntity> {
         return new Identifier(Main.MODID, "animations/turret.animation.json");
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
-    public void setLivingAnimations(TurretEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
-        super.setLivingAnimations(entity, uniqueID, customPredicate);
+    public void setCustomAnimations(TurretEntity animatable, int instanceId, AnimationEvent animationEvent) {
+        super.setCustomAnimations(animatable, instanceId, animationEvent);
         IBone head = this.getAnimationProcessor().getBone("head");
         IBone canyon = this.getAnimationProcessor().getBone("canyon");
 
-        EntityModelData extraData = (EntityModelData)  customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
+        EntityModelData extraData = (EntityModelData)  animationEvent.getExtraDataOfType(EntityModelData.class).get(0);
 
-        if (head != null && canyon != null && entity.isActive()) {
+        if (head != null && canyon != null && animatable.isActive()) {
             head.setRotationY(extraData.headPitch * ((float) Math.PI / 180f));
         }
     }

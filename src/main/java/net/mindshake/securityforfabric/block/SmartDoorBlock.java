@@ -1,12 +1,10 @@
 package net.mindshake.securityforfabric.block;
 
-import net.mindshake.securityforfabric.Main;
 import net.mindshake.securityforfabric.block.entity.SmartDoorBlockEntity;
 import net.mindshake.securityforfabric.registry.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.DoubleBlockHalf;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
@@ -103,8 +101,9 @@ public class SmartDoorBlock extends BlockWithEntity {
         if (Screen.hasShiftDown()) {
             tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.smart_door_0")));
             tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.smart_door_1")));
+            tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.sneak_to_break")));
         } else {
-            tooltip.add(MutableText.of(new TranslatableTextContent(("tooltip.securityforfabric.shift_for_more_info"))));
+            tooltip.add(MutableText.of(new TranslatableTextContent("tooltip.securityforfabric.shift_for_more_info")));
         }
         super.appendTooltip(stack, world, tooltip, options);
     }
@@ -172,7 +171,7 @@ public class SmartDoorBlock extends BlockWithEntity {
                 world.emitGameEvent((Entity) player, this.isOpen(state) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
                 return ActionResult.success(world.isClient);
             } else if (!blockEntity.getOwnerUUID().equals(player.getUuidAsString()) && !blockEntity.getOwnerUUID().equals("")) {
-                player.sendMessage(MutableText.of(new TranslatableTextContent(("message.securityforfabric.cannot_use"))), true);
+                player.sendMessage(MutableText.of(new TranslatableTextContent("message.securityforfabric.cannot_use")), true);
             }
             return ActionResult.success(world.isClient);
         } else {
@@ -182,7 +181,7 @@ public class SmartDoorBlock extends BlockWithEntity {
                     dropStack(world, pos, new ItemStack(ModBlocks.SMART_DOOR));
                 world.breakBlock(pos, true);
             } else {
-                player.sendMessage(MutableText.of(new TranslatableTextContent(("message.securityforfabric.cannot_break"))), true);
+                player.sendMessage(MutableText.of(new TranslatableTextContent("message.securityforfabric.cannot_break")), true);
             }
         }
 
