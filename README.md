@@ -5,4 +5,4 @@
 
 A mod which adds several stuff to protect your home.
 
-(You can check this mod here)[https://www.curseforge.com/minecraft/mc-mods/security4fabric]
+[You can check this mod here](https://www.curseforge.com/minecraft/mc-mods/security4fabric)
