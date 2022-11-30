@@ -3,16 +3,19 @@ package net.mindshake.securityforfabric.entity;
 import net.mindshake.securityforfabric.entity.goal.BasicTurretAttackGoal;
 import net.mindshake.securityforfabric.entity.goal.TurretTargetGoal;
 import net.mindshake.securityforfabric.entity.projectile.TurretBulletEntity;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.RangedWeaponItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
@@ -21,7 +24,10 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -32,10 +38,10 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class TurretEntity extends HostileEntity implements IAnimatable, RangedAttackMob {
+public class TurretEntity extends MobEntity implements IAnimatable, RangedAttackMob {
 
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private BasicTurretAttackGoal<TurretEntity> turretAttackGoal =  new BasicTurretAttackGoal<TurretEntity>(this, 0, 10, 15.0f);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final BasicTurretAttackGoal<TurretEntity> turretAttackGoal =  new BasicTurretAttackGoal<TurretEntity>(this, 0, 10, 15.0f);
 
     private static final TrackedData<String> OWNER_UUID;
     private static final TrackedData<Boolean> IS_ACTIVE;
@@ -48,14 +54,28 @@ public class TurretEntity extends HostileEntity implements IAnimatable, RangedAt
 
     /*-----------------------------------SETUP-------------------------------*/
 
-    public TurretEntity(EntityType<? extends HostileEntity> entityType, World world) {
+    public TurretEntity(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);
     }
 
+    @Override
+    public boolean isAffectedBySplashPotions() {
+        return false;
+    }
+
+    @Override
+    public boolean isImmuneToExplosion() {
+        return true;
+    }
+
+    @Override
+    public float getEffectiveExplosionResistance(Explosion explosion, BlockView world, BlockPos pos, BlockState blockState, FluidState fluidState, float max) {
+        return 99999;
+    }
 
     public static DefaultAttributeContainer.Builder setAttributes() {
         return PathAwareEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 360000.0D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, 2.0f)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 99f);
@@ -72,6 +92,11 @@ public class TurretEntity extends HostileEntity implements IAnimatable, RangedAt
     public void lookAtEntity(Entity targetEntity, float maxYawChange, float maxPitchChange) {
         if (isActive())
             super.lookAtEntity(targetEntity, maxYawChange, maxPitchChange);
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        return false;
     }
 
     @Override
@@ -115,6 +140,11 @@ public class TurretEntity extends HostileEntity implements IAnimatable, RangedAt
         for (int j = 0; j < amount; ++j) {
             this.world.addParticle(ParticleTypes.SMOKE, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), d, e, f);
         }
+    }
+
+    @Override
+    public boolean canTakeDamage() {
+        return false;
     }
 
     @Override
