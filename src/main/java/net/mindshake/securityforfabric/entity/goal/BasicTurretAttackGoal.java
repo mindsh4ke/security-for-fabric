@@ -13,7 +13,7 @@ import net.minecraft.item.Items;
 
 import java.util.EnumSet;
 
-public class BasicTurretAttackGoal <T extends HostileEntity> extends Goal {
+public class BasicTurretAttackGoal <T extends MobEntity> extends Goal {
     private final T actor;
     private int attackInterval;
     private int combatTicks = -1;

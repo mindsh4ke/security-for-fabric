@@ -32,10 +32,8 @@ public class TurretBlock extends Block {
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        TurretEntity entity = ModEntities.TURRET.create(world);
-        entity.setOwnerUUID(((PlayerEntity)placer).getUuidAsString());
-        entity.updatePosition(pos.getX() + 0.5f, pos.getY() + 1, pos.getZ() + 0.5f);
-        world.spawnEntity(entity);
+        assert placer != null;
+        createTurretEntity(world, (PlayerEntity) placer, pos);
         super.onPlaced(world, pos, state, placer, itemStack);
     }
 
@@ -51,6 +49,8 @@ public class TurretBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         TurretEntity entity = getTurretEntity(world, pos);
         if (!player.isSneaking()) {
+            if (entity == null)
+                entity = createTurretEntity(world, player, pos);
             Objects.requireNonNull(entity).onInteract(player);
         } else {
             if (Objects.requireNonNull(entity).isOwner(player)) {
@@ -81,5 +81,13 @@ public class TurretBlock extends Block {
                 return (TurretEntity) entity;
         }
         return null;
+    }
+
+    private TurretEntity createTurretEntity (World world, PlayerEntity placer, BlockPos pos) {
+        TurretEntity entity = ModEntities.TURRET.create(world);
+        entity.setOwnerUUID(placer.getUuidAsString());
+        entity.updatePosition(pos.getX() + 0.5f, pos.getY() + 1, pos.getZ() + 0.5f);
+        world.spawnEntity(entity);
+        return entity;
     }
 }

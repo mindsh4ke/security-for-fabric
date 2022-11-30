@@ -1,6 +1,7 @@
 package net.mindshake.securityforfabric.block.entity;
 
 import net.mindshake.securityforfabric.block.FanBlock;
+import net.mindshake.securityforfabric.entity.TurretEntity;
 import net.mindshake.securityforfabric.registry.ModBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -66,13 +67,15 @@ public class FanBlockEntity extends BlockEntity implements IAnimatable {
 
 
         for (int i = 0; i < entity.getInBoxEntities().size(); i++) {
-            if (fanBox.contains(entity.getInBoxEntities().get(i).getPos())) {
-                entity.getInBoxEntities().get(i).move(MovementType.SELF, dir);
-                if (!entity.getInBoxEntities().get(i).hasNoGravity() && facing.equals(Direction.UP))
-                    entity.getInBoxEntities().get(i).setNoGravity(true);
-            } else {
-                if (entity.getInBoxEntities().get(i).hasNoGravity() && facing.equals(Direction.UP))
-                    entity.getInBoxEntities().get(i).setNoGravity(false);
+            if (!(entity.getInBoxEntities().get(i) instanceof TurretEntity)) {
+                if (fanBox.contains(entity.getInBoxEntities().get(i).getPos())) {
+                    entity.getInBoxEntities().get(i).move(MovementType.SELF, dir);
+                    if (!entity.getInBoxEntities().get(i).hasNoGravity() && facing.equals(Direction.UP))
+                        entity.getInBoxEntities().get(i).setNoGravity(true);
+                } else {
+                    if (entity.getInBoxEntities().get(i).hasNoGravity() && facing.equals(Direction.UP))
+                        entity.getInBoxEntities().get(i).setNoGravity(false);
+                }
             }
         }
 
