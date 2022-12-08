@@ -1,6 +1,7 @@
 package net.mindshake.securityforfabric.block;
 
 import net.mindshake.securityforfabric.block.entity.BlastMineBlockEntity;
+import net.mindshake.securityforfabric.block.entity.SensorBlockEntity;
 import net.mindshake.securityforfabric.block.entity.SpikesBlockEntity;
 import net.mindshake.securityforfabric.registry.ModBlockEntities;
 import net.mindshake.securityforfabric.registry.ModBlocks;
@@ -114,7 +115,6 @@ public class BlastMineBlock extends BlockWithEntity {
         return new BlastMineBlockEntity(pos,state);
     }
 
-    @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type, ModBlockEntities.BLAST_MINE_BLOCKENTITY, BlastMineBlockEntity::tick);

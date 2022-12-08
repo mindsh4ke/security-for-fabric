@@ -1,5 +1,6 @@
 package net.mindshake.securityforfabric.block.entity;
 
+import net.mindshake.securityforfabric.Main;
 import net.mindshake.securityforfabric.registry.ModBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

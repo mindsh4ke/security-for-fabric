@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.mindshake.securityforfabric.Main;
 import net.mindshake.securityforfabric.block.*;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -52,6 +51,12 @@ public class ModBlocks {
 
     public static Block FAN = registerBlock("fan",
             new FanBlock(FabricBlockSettings.of(Material.METAL).strength(0.4f).nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
+
+    public static Block SENSOR = registerBlock("sensor",
+            new SensorBlock(FabricBlockSettings.of(Material.METAL).strength(0.5f).requiresTool().nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
+
+    //public static Block MECHANICAL_WALL = registerBlock("mechanical_wall",
+    //        new MechanicalWallBlock(FabricBlockSettings.of(Material.METAL).strength(0.5f).requiresTool().nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);

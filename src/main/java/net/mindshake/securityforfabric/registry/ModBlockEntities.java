@@ -17,6 +17,10 @@ public class ModBlockEntities {
 
     public static BlockEntityType<FanBlockEntity> FAN_BLOCKENTITY;
 
+    public static BlockEntityType<SensorBlockEntity> SENSOR_BLOCKENTITY;
+
+    public static BlockEntityType<MechanicalWallBlockEntity> MECHANICAL_WALL_BLOCKENTITY;
+
     public static void registerAllBlockEntities () {
 
         SPIKES_BLOCKENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Main.MODID, "spikes_blockentity"),
@@ -38,5 +42,13 @@ public class ModBlockEntities {
         FAN_BLOCKENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Main.MODID, "fan_blockentity"),
                 FabricBlockEntityTypeBuilder.create(FanBlockEntity::new,
                         ModBlocks.FAN).build(null));
+
+        SENSOR_BLOCKENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Main.MODID, "sensor_blockentity"),
+                FabricBlockEntityTypeBuilder.create(SensorBlockEntity::new,
+                        ModBlocks.SENSOR).build(null));
+
+        /*MECHANICAL_WALL_BLOCKENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Main.MODID, "mechanical_wall_blockentity"),
+                FabricBlockEntityTypeBuilder.create(MechanicalWallBlockEntity::new,
+                        ModBlocks.MECHANICAL_WALL).build(null));*/
     }
 }

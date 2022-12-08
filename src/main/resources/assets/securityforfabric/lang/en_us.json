@@ -12,6 +12,7 @@
   "block.securityforfabric.smart_chest": "Smart Chest",
   "block.securityforfabric.turret_block": "Turret",
   "block.securityforfabric.fan": "Fan",
+  "block.securityforfabric.sensor": "Sensor",
 
   "entity.securityforfabric.turret": "Turret",
 
@@ -27,6 +28,8 @@
 
   "tooltip.securityforfabric.walking_mine_item_0": "Will move forward on the direction you place it.",
   "tooltip.securityforfabric.walking_mine_item_1": "It explodes in 20 seconds on when it's attacked.",
+  "tooltip.securityforfabric.sensor_0": "It detects any nearby entity except the owner",
+  "tooltip.securityforfabric.sensor_1": "in a 8x8 radius.",
 
 
   "message.securityforfabric.cannot_use": "You are not allowed to use this block",

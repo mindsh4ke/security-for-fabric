@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=true": {
+      "model": "securityforfabric:block/sensor/sensor_on"
+    },
+    "powered=false": {
+      "model": "securityforfabric:block/sensor/sensor_off"
+    }
+  }
+}
