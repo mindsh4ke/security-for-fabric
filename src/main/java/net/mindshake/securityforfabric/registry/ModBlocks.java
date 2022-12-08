@@ -53,6 +53,9 @@ public class ModBlocks {
     public static Block FAN = registerBlock("fan",
             new FanBlock(FabricBlockSettings.of(Material.METAL).strength(0.4f).nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
 
+    public static Block SENSOR = registerBlock("sensor",
+            new SensorBlock(FabricBlockSettings.of(Material.METAL).strength(0.5f).requiresTool().nonOpaque().sounds(BlockSoundGroup.METAL)), ItemGroup.REDSTONE);
+
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(Main.MODID, name), block);

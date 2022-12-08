@@ -1,0 +1,39 @@
+{
+  "block.securityforfabric.blast_mine": "Mina Explosiva",
+  "block.securityforfabric.grass_mine": "Césped con Mina",
+  "block.securityforfabric.dirt_mine": "Tierra con Mina",
+  "block.securityforfabric.cobblestone_mine": "Roca con Mina",
+  "block.securityforfabric.stone_mine": "Piedra con Mina",
+  "block.securityforfabric.crafting_table_mine": "Mesa de Crafteo con Mina",
+  "block.securityforfabric.furnace_mine": "Horno con Mina",
+  "block.securityforfabric.fake_floor": "Césped Falso",
+  "block.securityforfabric.spikes": "Pinchos",
+  "block.securityforfabric.smart_door": "Puerta Inteligente",
+  "block.securityforfabric.smart_chest": "Cofre Inteligente",
+  "block.securityforfabric.turret_block": "Torreta",
+  "block.securityforfabric.fan": "Ventilador",
+  "block.securityforfabric.sensor": "Sensor",
+
+  "entity.securityforfabric.turret": "Torreta",
+
+  "item.securityforfabric.spikesitem": "Pinchos",
+  "item.securityforfabric.cpu": "CPU",
+  "item.securityforfabric.walking_mine_spawner": "Mina Andante",
+
+  "tooltip.securityforfabric.smart_door_0": "Solo el propietario puede abrir y romperla.",
+  "tooltip.securityforfabric.smart_door_1": "El resto de jugadores no pueden",
+  "tooltip.securityforfabric.shift_for_more_info": "Presiona SHIFT para más info",
+  "tooltip.securityforfabric.sneak_to_break": "Agachado + Click Derecho para romper",
+  "tooltip.securityforfabric.turret_0": "Ataca a los enemigos cercanos",
+
+  "tooltip.securityforfabric.walking_mine_item_0": "Se desplazará en la dirección en la que la coloques.",
+  "tooltip.securityforfabric.walking_mine_item_1": "Explotará en 20 secs o cuando sea golpeada",
+  "tooltip.securityforfabric.sensor_0": "Detecta cualquier entidad cercana excepto el propietario",
+  "tooltip.securityforfabric.sensor_1": "en un radio de 8x8",
+
+
+  "message.securityforfabric.cannot_use": "You are not allowed to use this block",
+  "message.securityforfabric.cannot_break": "You are not allowed to break this block",
+
+  "title.securityforfabric.smart_chest": "%s's chest"
+}
